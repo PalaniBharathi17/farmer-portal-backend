@@ -41,7 +41,6 @@ func Connect(cfg config.Config) (*gorm.DB, error) {
 		return nil, fmt.Errorf("failed to get database handle: %w", err)
 	}
 
-	// Conservative defaults suitable for small MVP deployments.
 	sqlDB.SetMaxOpenConns(10)
 	sqlDB.SetMaxIdleConns(5)
 	sqlDB.SetConnMaxLifetime(30 * time.Minute)
